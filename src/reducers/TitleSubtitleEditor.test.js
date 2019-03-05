@@ -3,22 +3,26 @@ import { updateTitle, updateSubtitle } from '../actions/TitleSubtitleEditor';
 
 describe('reducer', () => {
   it('can handle updating title', () => {
-    const state = 'title1';
+    const state = {
+      title: 'title'
+    };
 
     const updatedTitle = updateTitle('newTitle');
 
     const updateState = reducer(state, updatedTitle);
 
-    expect(updateState).toEqual('newTitle');
+    expect(updateState).toEqual({ title: 'newTitle' });
   });
 
-  it('can handle updating subTitle', () => {
-    const state = 'subTitle1';
+  it('can handle updating subtitle', () => {
+    const state = {
+      subtitle: 'subtitle'
+    };
 
-    const updatedsubTitle = updateSubtitle('newsubTitle');
+    const updatedSubtitle = updateSubtitle('newsubtitle');
 
-    const updateState = reducer(state, updatedsubTitle);
+    const updateState = reducer(state, updatedSubtitle);
 
-    expect(updateState).toEqual('newsubTitle');
+    expect(updateState).toEqual({ subtitle: 'newsubtitle' });
   });
 });
